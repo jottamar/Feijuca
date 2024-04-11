@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Prof Roger Bassan | 01</title>
+    <style>
+        body{
+            background-color: cornflowerblue;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+
+        }
+        .box-nav{
+            background-color: gold;
+            padding: 5px;
+            border-radius: 15px;
+        }
+        .box{
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            padding: 15px;
+            border-radius: 15px;
+            color: white;
+        }
+        input{
+            padding: 10px;
+            border: none;
+            outline:none;
+            border-radius: 10px;
+            font-size: 15px;
+            width: 50%;
+        }
+        button{
+            padding: 10px;
+            border: none;
+            outline: none;
+            width: 50%;
+            background-color: slateblue;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        button:hover{
+            background-color: cornflowerblue;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box-nav">
+        <h1>Questão #2
+        </h1>
+        <h2>Disciplina de Algoritmos</h2>
+    </div>
+    <div class="box">
+        <p>Leia um valor de salário em reias e calcule o valor do imposto sobre os rendimentos.(USe a tabela do imposto de renda 2023).</p>
+        <input type="text" id="reais" placeholder="Digite o valor do salario">
+        <br><br>
+        <button onclick="go()">Enviar</button>
+    </div>
+</body>
+    <script>
+        function go()
+        {
+            var salario = document.getElementById('reais').value;
+            var imposto = 0
+            if(salario<=2259.20){
+                imposto = 0
+                alert("Você não vai precisar pagar imposto de renda!!!");
+            }
+            else if(salario<=2826.65){
+                imposto = salario * 0.075;
+            }
+            else if(salario<=3751.05){
+                imposto = salario * 0.15;
+            }
+            else if(salario<=4664.68){
+                imposto = salario * 0.225;
+            }
+            else{
+                imposto = salario * 0.275;
+            }
+
+            alert('Você pagará de imposto de renda: R$' + imposto);
+        }
+
+    </script>
+</html>
