@@ -58,7 +58,7 @@
     </div>
     <div class="box">
         <p>Leia um valor de salário em reias e calcule o valor do imposto sobre os rendimentos.(USe a tabela do imposto de renda 2023).</p>
-        <input type="text" id="reais" placeholder="Digite o valor do salario">
+        <input type="number" id="reais" placeholder="Digite o valor do salario">
         <br><br>
         <button onclick="go()">Enviar</button>
     </div>
@@ -66,11 +66,10 @@
     <script>
         function go()
         {
-            var salario = document.getElementById('reais').value;
+            var salario = parseFloat(document.getElementById("#reais").value);
             var imposto = 0
             if(salario<=2259.20){
                 imposto = 0
-                alert("Você não vai precisar pagar imposto de renda!!!");
             }
             else if(salario<=2826.65){
                 imposto = salario * 0.075;
